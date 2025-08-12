@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market Day — Fun & Flavour</title>
+  <style>
+    :root {
+      --accent: #ff6b6b;
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #07101a 0%, #0f1724 100%);
+      color: #e6eef6;
+      line-height: 1.35;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 18px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #fcae1e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #07101a;
+      font-size: 24px;
+      user-select: none;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 12px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 20px;
+      align-items: center;
+      margin-top: 26px;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero h2 {
+      margin: 0 0 8px 0;
+      font-size: 28px;
+    }
+    .hero p {
+      color: var(--muted);
+      margin: 0 0 16px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #07101a;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .card {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 10px 0 6px 0;
+      font-size: 16px;
+    }
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .price {
+      font-weight: 800;
+    }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .schedule {
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    footer {
+      margin-top: 28px;
+      padding: 18px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+    form label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      background: #051226;
+      border: 1px solid rgba(255,255,255,0.03);
+      color: #e6eef6;
+      margin-top: 6px;
+      font-size: 14px;
+      resize: vertical;
+    }
+    form button {
+      margin-top: 18px;
+      padding: 12px 20px;
+      background: var(--accent);
+      color: #07101a;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    form button:hover {
+      background: #ff5252;
+    }
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">MD</div>
+        <div>
+          <h1>Market Day — Mayfair Stall</h1>
+          <div class="small">Car sim • PS4 • Ice cream • Energy drinks • Mini games</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Welcome to our Market Day stall!</h2>
+        <p>Fast rides on the car sim, 10-minute PS4 sessions, cold energy drinks, toys, and tasty ice cream & iced coffee. Bring friends — fun for everyone.</p>
+
+        <!-- Formspree form -->
+        <form action="https://formspree.io/f/xyzpodbl" method="POST" id="reservationForm">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="contact">Phone / WhatsApp / Email</label>
+          <input type="text" id="contact" name="contact" required />
+
+          <label for="item">What would you like to reserve?</label>
+          <select id="item" name="item">
+            <option>PS4 — 10 minutes</option>
+            <option>Car sim — 3 tries</option>
+            <option>Ice cream</option>
+            <option>Energy drink</option>
+          </select>
+
+          <label for="delivery">Delivery option</label>
+          <select id="delivery" name="delivery">
+            <option>Pickup</option>
+            <option>Delivery (Only in school grounds give your location )</option>
+          </select>
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+
+          <button type="submit">Send Reservation</button>
+        </form>
+
+        <p class="small" style="margin-top:12px;color:#aab;">Open: 09:00 — 16:00 • Stall A12</p>
+      </div>
+
+      <div>
+        <div class="card" style="text-align:center">
+          <img src="afro.png" alt="Afro Image" />
+          <h3 style="margin-top:8px">Come by Stall A12</h3>
+          <p class="small">Quick games, cold drinks, and snacks. Great prices and good vibes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2 style="margin-top:20px">Products & Games</h2>
+      <div class="products">
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Car+Sim" alt="Car Sim" />
+          <h3>Car Sim — 3 tries</h3>
+          <div class="meta"><div class="small">Fast races</div><div class="price">R25</div></div>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=PS4+Session" alt="PS4" />
+          <h3>PS4 — 10 minutes</h3>
+          <div class="meta"><div class="small">FIFA / GTA</div><div class="price">R30</div></div>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Energy+Drink" alt="Energy Drink" />
+          <h3>Energy Drink</h3>
+          <div class="meta"><div class="small">Cold — Cans</div><div class="price">R20</div></div>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Ice+Cream" alt="Ice cream" />
+          <h3>Ice Cream</h3>
+          <div class="meta"><div class="small">Cone or cup</div><div class="price">R15</div></div>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Toys" alt="Toys" />
+          <h3>Toys & Small Gifts</h3>
+          <div class="meta"><div class="small">From R10</div><div class="price">R10+</div></div>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Mini+Games" alt="Mini games" />
+          <h3>Mini Games</h3>
+          <div class="meta"><div class="small">Win prizes</div><div class="price">R5 — R20</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid-two">
+      <div class="schedule">
+        <h3 id="schedule">Market Day Schedule</h3>
+        <p class="small">Set up: 08:00 — Doors open: 09:00 — Close: 16:00</p>
+        <ul style="margin-top:10px;color:var(--muted);">
+          <li>09:00 — Welcome & first rides</li>
+          <li>11:30 — Mini-game tournament (prizes)</li>
+          <li>13:00 — Ice cream special</li>
+          <li>15:00 — Last PS4 sessions</li>
+        </ul>
+
+        <h4 style="margin-top:12px">Price deals</h4>
+        <div class="small">Bundle: Car sim (3) + Ice cream = R35</div>
+      </div>
+    </div>
+
+    <footer>
+      Made with ❤️ for Market Day • Replace images in the <code>img</code> tags with your own.
+    </footer>
+  </div>
+</body>
+</html>
